@@ -114,13 +114,20 @@ Como pode ser visto, há 219 NaN na coluna "Sleep Disorder". Então, é interess
 
 Agora, com os dados tratados, a análise em si pode ser iniciada.
 
-## Passo 3: Avaliando correlações entre variáveis
+## Passo 3: Avaliando correlações entre variáveis numéricas
 
-Uma boa métrica para analisar as relações entre colunas é a correlação de Pearson, onde tal relação varia entre -1 e +1. Assim, pode-se analisar o quanto uma variável influencia na outra, positiva ou negativamente, onde valores próximos aos extremos significam uma forte relação. Vale ressaltar que apenas pode ser usado em dados numéricos (int or float). Então, as colunas "objeto" devem ser separadas das numéricas. Abaixo foi criado um dataframe apenas com as variáveis numéricas.
+Uma boa métrica para analisar as relações entre colunas é a correlação de Pearson, onde tal relação varia entre -1 e +1. Assim, pode-se analisar o quanto uma variável influencia na outra, positiva ou negativamente, onde valores próximos aos extremos significam uma forte relação. Vale ressaltar que apenas pode ser usado em dados numéricos (int or float). Então, as colunas "objeto" devem ser separadas das numéricas. Abaixo foi criado um dataframe apenas com as variáveis numéricas:
+
+- Age
+- Sleep Duration
+- Quality of Sleep
+- Physical Activity Level
+- Heart Rate
+- Daily Steps
   
-    sleep_number = sleep_df[['Age','Sleep Duration','Quality of Sleep','Physical Activity Level','Stress Level','Heart Rate','Daily Steps']]
-    correlation = sleep_number.corr()
-    sns.heatmap(correlation, annot = True, fmt = '.2f', vmax = +1, vmin = -1, cmap = "RdBu_r")
+        sleep_number = sleep_df[['Age','Sleep Duration','Quality of Sleep','Physical Activity Level','Stress Level','Heart Rate','Daily Steps']]
+        correlation = sleep_number.corr()
+        sns.heatmap(correlation, annot = True, fmt = '.2f', vmax = +1, vmin = -1, cmap = "RdBu_r")
 
 ## Heatmap ##
 ![Pearson_Correlation](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/10482bf4-a374-4332-9872-dfd84c98f0d3)
