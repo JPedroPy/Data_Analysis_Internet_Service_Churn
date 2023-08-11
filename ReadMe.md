@@ -125,6 +125,40 @@ Uma boa métrica para analisar as relações entre colunas é a correlação de 
 ## Heatmap ##
 ![Pearson_Correlation](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/10482bf4-a374-4332-9872-dfd84c98f0d3)
 
+Como pode ser visto, há algumas correlações fortes com "Quality of Sleep": 
+
+- -0.66 com "Heart Rate"
+- -0.90 com "Stress Level"
+- +0.88 com "Sleep Duration"
+
+Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
+
+## Passo 4: Análise gráfica
+Vimos que há três variáveis numéricas que possuem correlação com a qualidade do sono. Uma análise gráfica dessas variáveis ajuda, visualmente, a reforçar a ideia da correlação de Pearson. Para isso, foi utilizada o gráfico "density_heatmap", do "seaborn".
+
+## 1. Quality of Sleep x Heart Rate 
+        graphic = px.density_heatmap(sleep_df, x = 'Heart Rate', y = 'Quality of Sleep')
+        graphic.show()
+![Quality x Heart Rate](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/dd995fac-006c-4bd4-8d4f-9b4cbf01e118)
+Como esperado, há uma relação indireta entre as variáveis, onde os maiores valores de qualidade do sono são relacionados com os menores valores de frequência cardíaca, sendo a maior concentração para valores abaixo de 75.
+## 2. Quality of Sleep x Stress Level
+        graphic = px.density_heatmap(sleep_df, x = 'Stress Level', y = 'Quality of Sleep')
+        graphic.show()
+![Quality x Stress](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/2c5339b3-5e94-4965-8769-184ba34cee0a)
+Como imaginado, de modo similar à análise anterior, conforme aumenta o nível de estresse, há piora na qualidade do sono, ou seja, são relacionados de modo inverso.
+## 3. Quality of Sleep x Sleep Duration
+        graphic = px.density_heatmap(sleep_df, x = 'Sleep Duration', y = 'Quality of Sleep')
+        graphic.show()
+![Quality x Sleep Duration](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/9da68021-dc72-4fea-9ed4-e97f116fbe5f)
+Diferentemente dos gráficos anteriores, conforme aumenta a duração do sono, melhor será a qualidade do mesmo. 
+
+Com essa análise das variáveis numéricas, pode-se tirar algumas conclusões:
+
+- Uma alta frequência cardíaca é prejudicial ao sono
+- Um elevado nível de estresse atrapalha a qualidade do sono
+- Dormir por mais tempo ajuda a ter um sono melhor
+- Variáveis como "Age", "Physical Activity Level" e "Daily Steps" não são significativos.
+
 
 
     
