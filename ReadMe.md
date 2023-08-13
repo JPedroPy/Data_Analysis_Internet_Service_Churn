@@ -1,4 +1,4 @@
-# Sleep Healthy (Still working on it)
+# Sleep Healthy
 
 ## How to sleep better?
 
@@ -18,7 +18,7 @@ In this data analysis, I'll dive into the healthy area, specifically about sleep
 - Sleep Disorder
 
 ## Passo 1: Importar as bibliotecas e a base de dados usada
-As bibliotecas usadas ao longo dessa análise serão: "pandas", para leitura e tratamento dos dados através de dataframes, "seaborn", matplotlib.pyplot e plotly.express para plotagem de gráficos.
+As bibliotecas usadas ao longo dessa análise serão: [pandas](https://pandas.pydata.org/docs/), para leitura e tratamento dos dados através de dataframes, [seaborn](https://seaborn.pydata.org/), [matplotlib.pyplot](https://matplotlib.org/stable/index.html) e [plotly.express](https://plotly.com/python/) para plotagem de gráficos.
 
     import pandas as pd
     import seaborn as sns
@@ -29,7 +29,7 @@ As bibliotecas usadas ao longo dessa análise serão: "pandas", para leitura e t
     sleep_df.info()
     
 ## Passo 2: Visualização e limpeza dos dados
-Analisando as informações das colunas e Checking if there's NaN (Not a Number) values 
+Analisando as informações das colunas e Checking if there's `NaN` (Not a Number) values 
 
     sleep_df.info()
     
@@ -70,7 +70,7 @@ Analisando as informações das colunas e Checking if there's NaN (Not a Number)
     Daily Steps                  0
     Sleep Disorder             219
 
-Como pode ser visto, há 219 NaN na coluna "Sleep Disorder". Então, é interessante transformá-los em 0 (zero).
+Como pode ser visto, há 219 NaN na coluna "Sleep Disorder". Então, é interessante transformá-los em `0 (zero)`.
 
     sleep_df.fillna(0, inplace = True)
     sleep_df.isna().sum()
@@ -116,7 +116,7 @@ Agora, com os dados tratados, a análise em si pode ser iniciada.
 
 ## Passo 3: Avaliando correlações entre variáveis numéricas
 
-Uma boa métrica para analisar as relações entre colunas é a correlação de Pearson, onde tal relação varia entre -1 e +1. Assim, pode-se analisar o quanto uma variável influencia na outra, positiva ou negativamente, onde valores próximos aos extremos significam uma forte relação. Vale ressaltar que apenas pode ser usado em dados numéricos (int or float). Então, as colunas "objeto" devem ser separadas das numéricas. Abaixo foi criado um dataframe apenas com as variáveis numéricas:
+Uma boa métrica para analisar as relações entre colunas é a `correlação de Pearson`, onde tal relação varia entre -1 e +1. Assim, pode-se analisar o quanto uma variável influencia na outra, positiva ou negativamente, onde valores próximos aos extremos significam uma forte relação. Vale ressaltar que apenas pode ser usado em dados numéricos (int or float). Então, as colunas "objeto" devem ser separadas das numéricas. Abaixo foi criado um dataframe apenas com as variáveis numéricas:
 
 - Age
 - Sleep Duration
@@ -132,22 +132,22 @@ Uma boa métrica para analisar as relações entre colunas é a correlação de 
 ## Heatmap ##
 ![Pearson_Correlation](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/10482bf4-a374-4332-9872-dfd84c98f0d3)
 
-Como pode ser visto, há algumas correlações fortes com "Quality of Sleep": 
+Como pode ser visto, há algumas `correlações fortes` com `Quality of Sleep`: 
 
-- -0.66 com "Heart Rate"
-- -0.90 com "Stress Level"
-- +0.88 com "Sleep Duration"
+- `-0.66` com `Heart Rate`
+- `-0.90` com `Stress Level`
+- `+0.88` com `Sleep Duration`
 
 Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
 
 ## Passo 4: Análise gráfica
-Vimos que há três variáveis numéricas que possuem correlação com a qualidade do sono. Uma análise gráfica dessas variáveis ajuda, visualmente, a reforçar a ideia da correlação de Pearson. Para isso, foi utilizada o gráfico "density_heatmap", do "seaborn".
+Vimos que há três variáveis numéricas que possuem correlação com a qualidade do sono. Uma análise gráfica dessas variáveis ajuda, visualmente, a reforçar a ideia da correlação de Pearson. Para isso, foi utilizada o gráfico `.density_heatmap`, by [plotly.express](https://plotly.com/python/).
 
 ## 1. Quality of Sleep x Heart Rate 
         graphic = px.density_heatmap(sleep_df, x = 'Heart Rate', y = 'Quality of Sleep')
         graphic.show()
 ![Quality x Heart Rate](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/dd995fac-006c-4bd4-8d4f-9b4cbf01e118)
-Como esperado, há uma relação indireta entre as variáveis, onde os maiores valores de qualidade do sono são relacionados com os menores valores de frequência cardíaca, sendo a maior concentração para valores abaixo de 75.
+Como esperado, há uma relação indireta entre as variáveis, onde os maiores valores de qualidade do sono são relacionados com os menores valores de frequência cardíaca, sendo a maior concentração para valores `abaixo de 75`.
 ## 2. Quality of Sleep x Stress Level
         graphic = px.density_heatmap(sleep_df, x = 'Stress Level', y = 'Quality of Sleep')
         graphic.show()
@@ -164,7 +164,7 @@ Com essa análise das variáveis numéricas, pode-se tirar algumas conclusões:
 - Uma alta frequência cardíaca é prejudicial ao sono
 - Um elevado nível de estresse atrapalha a qualidade do sono
 - Dormir por mais tempo ajuda a ter um sono melhor
-- Variáveis como "Age", "Physical Activity Level" e "Daily Steps" não são significativos.
+- Variables like `Age`, `Physical Activity Level` e `Daily Steps` não são significativos.
 
 
 
