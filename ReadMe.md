@@ -1,8 +1,8 @@
 # Sleep Healthy
 
-## Qual o melhor caminho para ter uma boa noite de sono?
+## What is the best way to have a good night's sleep?
 
-In this data analysis, I'll dive into the healthy area, specifically about sleep. As variáveis contidas nessa base de dados são:
+In this data analysis, I'll dive into the healthy area, specifically about sleep. The variables contained in this dataset are:
 
 - Gender
 - Age
@@ -17,7 +17,9 @@ In this data analysis, I'll dive into the healthy area, specifically about sleep
 - Daily Steps
 - Sleep Disorder
 
-## Passo 1: Importar as bibliotecas e a base de dados usada
+## 1.Defining the Problem and Objectives
+## 2.Data Collection
+## 3.Importar as bibliotecas e a base de dados usada
 As bibliotecas usadas ao longo dessa análise serão: [pandas](https://pandas.pydata.org/docs/), para leitura e tratamento dos dados através de dataframes, [seaborn](https://seaborn.pydata.org/), [matplotlib.pyplot](https://matplotlib.org/stable/index.html) e [plotly.express](https://plotly.com/python/) para plotagem de gráficos.
 
     import pandas as pd
@@ -28,7 +30,7 @@ As bibliotecas usadas ao longo dessa análise serão: [pandas](https://pandas.py
     sleep_df = pd.read_excel('sleep_healthy.xlsx')
     sleep_df.info()
     
-## Passo 2: Visualização e limpeza dos dados
+## 4.Data Cleaning and Preparation
 Analisando as informações das colunas e Checking if there's `NaN` (Not a Number) values 
 
     sleep_df.info()
@@ -262,8 +264,11 @@ Pessoas que possuem insônia estão propícias a terem um sono de menor qualidad
 ## Considerações finais
 Então, através das análises feitas, algumas recomendações podem ser feitas:
 
-- Como a frequência cardíaca deve ser controlada, bons hábitos devem ser adotados, como evitar o uso de cigarro e bebidas alcoólicas, assim como atentar-se com relação ao uso de medicamentos.
+- Evitar o uso de cigarro e bebidas alcoólicas, assim como atentar-se com relação ao uso de medicamentos, de modo a controlar a frequência cardíaca e a pressão sanguínea.
 - Dormir pelo menos 7 horas por noite.
-- Diminuir o nível de estresse. Práticas como adotar uma alimentação saudável, praticar mais exercícios físicos e meditação, reservar um tempo para atividades prazerosas, assim como dormir por mais tempo.
+- Diminuir o nível de estresse, adotando uma alimentação saudável, praticando mais exercícios físicos e meditação, reservando um tempo para atividades prazerosas, assim como dormir por mais tempo.
 - Adotar horários regulares de sono, evitar bebidas com cafeína à noite, comer alimentos leves no jantar e evitar dormir muito durante o dia, de modo a evitar a insônia.
+
+Esses são os pontos focais no processo da melhoria do sono.
+
 
