@@ -116,15 +116,8 @@ Agora, com os dados tratados, a análise em si pode ser iniciada.
 
 ## Passo 3: Avaliando correlações entre variáveis numéricas
 
-Uma boa métrica para analisar as relações entre colunas é a `correlação de Pearson`, onde tal relação varia entre -1 e +1. Assim, pode-se analisar o quanto uma variável influencia na outra, positiva ou negativamente, onde valores próximos aos extremos significam uma forte relação. Vale ressaltar que apenas pode ser usado em dados numéricos (int or float). Então, as colunas "objeto" devem ser separadas das numéricas. Abaixo foi criado um dataframe apenas com as variáveis numéricas:
+Uma boa métrica para analisar as relações entre colunas é a `correlação de Pearson`, onde tal relação varia entre -1 e +1. Assim, pode-se analisar o quanto uma variável influencia na outra, positiva ou negativamente, onde valores próximos aos extremos significam uma forte relação. Vale ressaltar que apenas pode ser usado em dados numéricos (int or float). Então, as colunas "objeto" devem ser separadas das numéricas. Abaixo foi criado um dataframe apenas com as variáveis numéricas: `Age`, `Sleep Duration`, `Quality of Sleep`, `Physical Activity Level`, `Heart Rate` and `Daily Steps`.
 
-- Age
-- Sleep Duration
-- Quality of Sleep
-- Physical Activity Level
-- Heart Rate
-- Daily Steps
-  
         sleep_number = sleep_df[['Age','Sleep Duration','Quality of Sleep','Physical Activity Level','Stress Level','Heart Rate','Daily Steps']]
         correlation = sleep_number.corr()
         sns.heatmap(correlation, annot = True, fmt = '.2f', vmax = +1, vmin = -1, cmap = "RdBu_r")
@@ -166,6 +159,78 @@ Com essa análise das variáveis numéricas, pode-se tirar algumas conclusões:
 - Dormir por mais tempo ajuda a ter um sono melhor
 - Variables like `Age`, `Physical Activity Level` e `Daily Steps` não são significativos.
 
+## Passo 3: Avaliando correlações entre variáveis não numéricas
+As variáveis não numéricas são: `BMI Category`, `Gender`, `Occupation`, `Blood Pressure` and `Sleep Disorder`. Cada variável teve a sua média da qualidade do sono calculada para cada valor diferente, de modo a analisar se há alguma correlação com a qualidade do sono. Os resultados obtidos foram:
 
+    variable_not_numerical_df = sleep_df[['BMI Category', 'Gender', 'Occupation', 'Blood Pressure', 'Sleep Disorder']]
 
-    
+    for variable in variable_not_numerical_df.columns:
+        variable_not_numerical = sleep_df.groupby(variable)['Quality of Sleep'].mean().sort_values(ascending = False)
+        print(variable_not_numerical)
+
+### BMI Category
+
+    Normal           7.661538
+    Normal Weight    7.428571
+    Overweight       6.898649
+    Obese            6.400000
+
+Pessoas que são acima do peso possuem um sono de menor qualidade em relação às que estão com o peso adequado.
+
+### Gender
+
+    Female    7.664865
+    Male      6.968254
+
+De maneira geral, as mulheres possuem um sono de melhor qualidade.
+
+### Occupation
+
+    Engineer                8.412698
+    Lawyer                  7.893617
+    Accountant              7.891892
+    Nurse                   7.369863
+    Manager                 7.000000
+    Teacher                 6.975000
+    Doctor                  6.647887
+    Software Engineer       6.500000
+    Salesperson             6.000000
+    Scientist               5.000000
+    Sales Representative    4.000000
+
+Nesse estudo, as 3 profissões com a melhor qualidade de sono: `Engineer`, `Lawyer` and `Accountant`.
+
+### Blood Pressure
+    118/75    9.000000
+    139/91    9.000000
+    115/78    9.000000
+    115/75    8.000000
+    118/76    8.000000
+    119/77    8.000000
+    121/79    8.000000
+    122/80    8.000000
+    125/80    7.661538
+    140/95    7.523077
+    130/85    7.242424
+    120/80    7.022222
+    135/90    7.000000
+    135/88    7.000000
+    128/84    7.000000
+    125/82    7.000000
+    117/76    7.000000
+    142/92    7.000000
+    128/85    6.333333
+    126/83    6.000000
+    129/84    5.000000
+    130/86    5.000000
+    132/87    5.000000
+    140/90    4.500000
+    131/86    4.000000
+
+De maneira geral, pessoas que possuem a pressão sistolítica com valores menores (por volta de 125 ou menos) e pressão diastolítica com valores também menores (por volta de 80 ou menos) são as que possuem um sono melhor.
+
+### Sleep Disorder
+    Sleep Apnea    7.205128
+    Insomnia       6.532468
+
+Pessoas que possuem insônia estão propícias a terem um sono de menor qualidade em relação às que possuem apneia do sono.
