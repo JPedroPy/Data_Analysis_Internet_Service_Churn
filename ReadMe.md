@@ -1,8 +1,21 @@
 # Sleep Healthy
-
 ## What is the best way to have a good night's sleep?
 
-In this data analysis, I'll dive into the healthy area, specifically about sleep. The variables contained in this dataset are:
+## _Stages of Analysis_
+[1. Define the problem]()
+
+[2. Collect Data]()
+
+[3. Data Cleaning and Preprocessing]()
+
+[4. Data Analysis Techniques]()
+
+[5. Exploratory Data Analysis (EDA) and Interpretation of Results]()
+
+[6. Conclusion and Recommendations]()
+
+### _1. Define the problem_
+In this dataset, we aim to analyze variables related to sleep and understand the reasons that make it less healthy, in order to make it better. The variables are:
 
 - Gender
 - Age
@@ -17,21 +30,19 @@ In this data analysis, I'll dive into the healthy area, specifically about sleep
 - Daily Steps
 - Sleep Disorder
 
-## 1.Defining the Problem and Objectives
-## 2.Data Collection
-## 3.Importar as bibliotecas e a base de dados usada
-As bibliotecas usadas ao longo dessa análise serão: [pandas](https://pandas.pydata.org/docs/), para leitura e tratamento dos dados através de dataframes, [seaborn](https://seaborn.pydata.org/), [matplotlib.pyplot](https://matplotlib.org/stable/index.html) e [plotly.express](https://plotly.com/python/) para plotagem de gráficos.
+
+### _2. Collect Data_
+The data was extracted from the file `wine_quality.xlsx`, from `Kaggle`, availabre at: <[https://www.kaggle.com/datasets/yasserh/wine-quality-dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)>.
+
+### _3. Data Cleaning and Preprocessing_
+Using the library [pandas](https://pandas.pydata.org/docs/) to import and interprete the data:
 
     import pandas as pd
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-    import plotly.express as px
-
+    
     sleep_df = pd.read_excel('sleep_healthy.xlsx')
     sleep_df.info()
     
-## 4.Data Cleaning and Preparation
-Analisando as informações das colunas e Checking if there's `NaN` (Not a Number) values 
+Viewing the column information and checking for `NaN` (Not a Number) values.
 
     sleep_df.info()
     
@@ -72,7 +83,7 @@ Analisando as informações das colunas e Checking if there's `NaN` (Not a Numbe
     Daily Steps                  0
     Sleep Disorder             219
 
-Como pode ser visto, há 219 NaN na coluna "Sleep Disorder". Então, é interessante transformá-los em `0 (zero)`.
+As observed, there are `219 NaN` values in the "Sleep Disorder" column. Therefore, it would be interesting to set them to zero.
 
     sleep_df.fillna(0, inplace = True)
     sleep_df.isna().sum()
@@ -114,7 +125,13 @@ Como pode ser visto, há 219 NaN na coluna "Sleep Disorder". Então, é interess
     dtypes: float64(1), int64(7), object(5)
     memory usage: 38.1+ KB
 
-Agora, com os dados tratados, a análise em si pode ser iniciada.
+## Qualidade inicial do sono
+
+    initial_sleep_quality = sleep_df['Quality of Sleep'].mean()
+    print(f'{initial_sleep_quality:.3f}')
+    7.313
+
+A qualidade inicial do sono é `7.313`.
 
 ## Passo 3: Avaliando correlações entre variáveis numéricas
 
@@ -135,13 +152,7 @@ Como pode ser visto, há algumas `correlações fortes` com `Quality of Sleep`:
 
 Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
 
-## Qualidade inicial do sono
 
-    initial_sleep_quality = sleep_df['Quality of Sleep'].mean()
-    print(f'{initial_sleep_quality:.3f}')
-    7.313
-
-A qualidade inicial do sono é `7.313`.
 
 ## Passo 4: Análise gráfica
 Vimos que há três variáveis numéricas que possuem correlação com a qualidade do sono. Uma análise gráfica dessas variáveis ajuda, visualmente, a reforçar a ideia da correlação de Pearson. Para isso, foi utilizada o gráfico `.density_heatmap`, by [plotly.express](https://plotly.com/python/).
