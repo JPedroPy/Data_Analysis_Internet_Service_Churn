@@ -1,6 +1,6 @@
 # Sleep Healthy
 
-## How to sleep better?
+## Qual o melhor caminho para ter uma boa noite de sono?
 
 In this data analysis, I'll dive into the healthy area, specifically about sleep. As variáveis contidas nessa base de dados são:
 
@@ -133,6 +133,14 @@ Como pode ser visto, há algumas `correlações fortes` com `Quality of Sleep`:
 
 Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
 
+## Qualidade inicial do sono
+
+    initial_sleep_quality = sleep_df['Quality of Sleep'].mean()
+    print(f'{initial_sleep_quality:.3f}')
+    7.313
+
+A qualidade inicial do sono é `7.313`.
+
 ## Passo 4: Análise gráfica
 Vimos que há três variáveis numéricas que possuem correlação com a qualidade do sono. Uma análise gráfica dessas variáveis ajuda, visualmente, a reforçar a ideia da correlação de Pearson. Para isso, foi utilizada o gráfico `.density_heatmap`, by [plotly.express](https://plotly.com/python/).
 
@@ -158,6 +166,21 @@ Com essa análise das variáveis numéricas, pode-se tirar algumas conclusões:
 - Um elevado nível de estresse atrapalha a qualidade do sono
 - Dormir por mais tempo ajuda a ter um sono melhor
 - Variables like `Age`, `Physical Activity Level` e `Daily Steps` não são significativos.
+
+## Improving the quality of sleep
+Como vimos, há alguns fatores que intererem com mais impacto em um sono saudável: `Heart Rate`, `Stress Level` and `Sleep Duration`. Então, após a análise gráfica, alguns pontos podem ser destacados:
+
+- Valores `menores ou iguais` a `71` são interessantes para `Heart Rate`
+- Valores `menores ou iguais` a `6` são interessantes para `Stress Level`
+- Valores `maiores ou iguais` a `7` são interessantes para `Sleep Duration`
+
+Então, realizando esses ajustes para obter uma nova média:
+    sleep_df = sleep_df[(sleep_df['Heart Rate'] <= 71) & (sleep_df['Stress Level'] <= 6) & (sleep_df['Sleep Duration'] >= 7)]
+    new_sleep_quality = sleep_df['Quality of Sleep'].mean()
+    print(f'{new_sleep_quality:.3f}')
+    8.171
+
+A nova média da qualidade do sono é `8.171`, sendo 
 
 ## Passo 3: Avaliando correlações entre variáveis não numéricas
 As variáveis não numéricas são: `BMI Category`, `Gender`, `Occupation`, `Blood Pressure` and `Sleep Disorder`. Cada variável teve a sua média da qualidade do sono calculada para cada valor diferente, de modo a analisar se há alguma correlação com a qualidade do sono. Os resultados obtidos foram:
