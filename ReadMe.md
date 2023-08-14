@@ -175,12 +175,13 @@ Como vimos, há alguns fatores que intererem com mais impacto em um sono saudáv
 - Valores `maiores ou iguais` a `7` são interessantes para `Sleep Duration`
 
 Então, realizando esses ajustes para obter uma nova média:
+
     sleep_df = sleep_df[(sleep_df['Heart Rate'] <= 71) & (sleep_df['Stress Level'] <= 6) & (sleep_df['Sleep Duration'] >= 7)]
     new_sleep_quality = sleep_df['Quality of Sleep'].mean()
     print(f'{new_sleep_quality:.3f}')
     8.171
 
-A nova média da qualidade do sono é `8.171`, sendo 
+A nova média da qualidade do sono é `8.171`, sendo `11.73%` maior do que a média inicial. 
 
 ## Passo 3: Avaliando correlações entre variáveis não numéricas
 As variáveis não numéricas são: `BMI Category`, `Gender`, `Occupation`, `Blood Pressure` and `Sleep Disorder`. Cada variável teve a sua média da qualidade do sono calculada para cada valor diferente, de modo a analisar se há alguma correlação com a qualidade do sono. Os resultados obtidos foram:
@@ -257,3 +258,12 @@ De maneira geral, pessoas que possuem a pressão sistolítica com valores menore
     Insomnia       6.532468
 
 Pessoas que possuem insônia estão propícias a terem um sono de menor qualidade em relação às que possuem apneia do sono.
+
+## Considerações finais
+Então, através das análises feitas, algumas recomendações podem ser feitas:
+
+- Como a frequência cardíaca deve ser controlada, bons hábitos devem ser adotados, como evitar o uso de cigarro e bebidas alcoólicas, assim como atentar-se com relação ao uso de medicamentos.
+- Dormir pelo menos 7 horas por noite.
+- Diminuir o nível de estresse. Práticas como adotar uma alimentação saudável, praticar mais exercícios físicos e meditação, reservar um tempo para atividades prazerosas, assim como dormir por mais tempo.
+- Adotar horários regulares de sono, evitar bebidas com cafeína à noite, comer alimentos leves no jantar e evitar dormir muito durante o dia, de modo a evitar a insônia.
+
