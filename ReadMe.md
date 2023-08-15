@@ -2,17 +2,17 @@
 ## What is the best way to have a good night's sleep?
 
 ## _Stages of Analysis_
-[1. Define the problem](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/blob/main/ReadMe.md#1-define-the-problem)
+[1. Define the problem](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#1-define-the-problem-%EF%B8%8F-return)
 
-[2. Collect Data](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/blob/main/ReadMe.md#2-collect-data)
+[2. Collect Data](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#2-collect-data-%EF%B8%8F-return)
 
-[3. Data Cleaning and Preprocessing](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/blob/main/ReadMe.md#3-data-cleaning-and-preprocessing)
+[3. Data Cleaning and Preprocessing](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#3-data-cleaning-and-preprocessing-%EF%B8%8F-return)
 
-[4. Data Analysis Techniques](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/blob/main/ReadMe.md#4-data-analysis-techniques)
+[4. Data Analysis Techniques](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#4-data-analysis-techniques-%EF%B8%8F-return)
 
-[5. Exploratory Data Analysis (EDA) and Interpretation of Results](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/blob/main/ReadMe.md#5-exploratory-data-analysis-eda-and-interpretation-of-results)
+[5. Exploratory Data Analysis (EDA) and Interpretation of Results](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#5-exploratory-data-analysis-eda-and-interpretation-of-results-%EF%B8%8F-return)
 
-[6. Conclusion and Recommendations](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/blob/main/ReadMe.md#6-conclusion-and-recommendations)
+[6. Conclusion and Recommendations](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#6-conclusion-and-recommendations-%EF%B8%8F-return)
 
 ### _1. Define the problem_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 In this dataset, we aim to analyze variables related to sleep and understand the reasons that make it less healthy, in order to make it better. The variables are:
@@ -125,7 +125,7 @@ As observed, there are `219 NaN` values in the `Sleep Disorder` column. Therefor
     dtypes: float64(1), int64(7), object(5)
     memory usage: 38.1+ KB
 
-## _Initial quality of sleep_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _Initial quality of sleep_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 
     initial_sleep_quality = sleep_df['Quality of Sleep'].mean()
     print(f'{initial_sleep_quality:.3f}')
@@ -136,7 +136,7 @@ The initial quality of sleep is `7.313`.
 ### 4. Data Analysis Techniques [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 It will be used `Pearson's correlation matrix` for numerical correlations and `Density Heatmap` for a visual analysis.
 
-## 5. Exploratory Data Analysis (EDA) and Interpretation of Results [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### 5. Exploratory Data Analysis (EDA) and Interpretation of Results [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 A good metric to analyse correlations between columns is the `Pearson's Correlation`, Where these relationships range from -1 to +1. This way, it's possible to analyze how much one variable influences another, positively or negatively, where values close to the extremes signify a strong relationship. It's worth noting that this can only be used with numerical data (integers or floats). Therefore, the 'object' columns should be separated from the numerical ones. Below, a dataframe containing only the numerical variables has been created: `Age`, `Sleep Duration`, `Quality of Sleep`, `Physical Activity Level`, `Heart Rate` and `Daily Steps`.
 
         sleep_number = sleep_df[['Age','Sleep Duration','Quality of Sleep','Physical Activity Level','Stress Level','Heart Rate','Daily Steps']]
@@ -153,7 +153,7 @@ As can be observed, that are `strong correlations` com `Quality of Sleep`:
 
 It means, based in a statistical analysis, higher heart rate is, lower sleep quality is (inversely propor Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
 
-## Graphical analysis [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### Graphical analysis [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 We observed that there are three numerical variables that have a correlation with sleep quality. A graphical analysis of these variables reinforces the idea of Pearson correlation. For this, the `.density_heatmap` plot, by [plotly.express](https://plotly.com/python/), was utilized.
 
 **_Quality of Sleep x Heart Rate_** 
