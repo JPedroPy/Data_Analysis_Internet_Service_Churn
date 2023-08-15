@@ -32,7 +32,7 @@ In this dataset, we aim to analyze variables related to sleep and understand the
 
 
 ### _2. Collect Data_
-The data was extracted from the file `wine_quality.xlsx`, from `Kaggle`, availabre at: <[https://www.kaggle.com/datasets/yasserh/wine-quality-dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)>.
+The data was extracted from the file `wine_quality.xlsx`, from `Kaggle`, availabre at: <https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset>.
 
 ### _3. Data Cleaning and Preprocessing_
 Using the library [pandas](https://pandas.pydata.org/docs/) to import and interprete the data:
@@ -83,7 +83,7 @@ Viewing the column information and checking for `NaN` (Not a Number) values.
     Daily Steps                  0
     Sleep Disorder             219
 
-As observed, there are `219 NaN` values in the "Sleep Disorder" column. Therefore, it would be interesting to set them to zero.
+As observed, there are `219 NaN` values in the `Sleep Disorder` column. Therefore, it would be interesting to set them to `zero`.
 
     sleep_df.fillna(0, inplace = True)
     sleep_df.isna().sum()
