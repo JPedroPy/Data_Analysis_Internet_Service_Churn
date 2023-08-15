@@ -133,10 +133,10 @@ As observed, there are `219 NaN` values in the `Sleep Disorder` column. Therefor
 
 The initial quality of sleep is `7.313`.
 
-### 4. Data Analysis Techniques [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _4. Data Analysis Techniques_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 It will be used `Pearson's correlation matrix` for numerical correlations and `Density Heatmap` for a visual analysis.
 
-### 5. Exploratory Data Analysis (EDA) and Interpretation of Results [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _5. Exploratory Data Analysis (EDA) and Interpretation of Results_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 A good metric to analyse correlations between columns is the `Pearson's Correlation`, Where these relationships range from -1 to +1. This way, it's possible to analyze how much one variable influences another, positively or negatively, where values close to the extremes signify a strong relationship. It's worth noting that this can only be used with numerical data (integers or floats). Therefore, the 'object' columns should be separated from the numerical ones. Below, a dataframe containing only the numerical variables has been created: `Age`, `Sleep Duration`, `Quality of Sleep`, `Physical Activity Level`, `Heart Rate` and `Daily Steps`.
 
         sleep_number = sleep_df[['Age','Sleep Duration','Quality of Sleep','Physical Activity Level','Stress Level','Heart Rate','Daily Steps']]
@@ -153,7 +153,7 @@ As can be observed, that are `strong correlations` com `Quality of Sleep`:
 
 It means, based in a statistical analysis, higher heart rate is, lower sleep quality is (inversely propor Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
 
-### Graphical analysis [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _Graphical analysis_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 We observed that there are three numerical variables that have a correlation with sleep quality. A graphical analysis of these variables reinforces the idea of Pearson correlation. For this, the `.density_heatmap` plot, by [plotly.express](https://plotly.com/python/), was utilized.
 
 **_Quality of Sleep x Heart Rate_** 
@@ -182,7 +182,7 @@ With this analysis of the numerical variables, several conclusions can be drawn:
 - Sleeping for longer durations contributes to better sleep quality
 - Variables like `Age`, `Physical Activity Level` and `Daily Steps` are not significant.
 
-### Improving the quality of sleep [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _Improving the quality of sleep_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 
 s we've observed, there are certain factors that have a more significant impact on healthy sleep: `Heart Rate`, `Stress Level` and `Sleep Duration`. Following the graphical analysis, a few points can be highlighted:
 
@@ -199,7 +199,7 @@ So, making these adjustments to calculate a new average:
 
 The new average sleep quality is `8.171`, which is `11.73%` higher than the initial average. 
 
-### Evaluating correlations between non-numerical variables [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _Evaluating correlations between non-numerical variables_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 
 The non-numerical variables are: `BMI Category`, `Gender`, `Occupation`, `Blood Pressure` and `Sleep Disorder`. The average sleep quality was calculated for each unique value of each variable to analyze if there is any correlation with sleep quality. The obtained results are as follows:
 
@@ -209,7 +209,7 @@ The non-numerical variables are: `BMI Category`, `Gender`, `Occupation`, `Blood 
         variable_not_numerical = sleep_df.groupby(variable)['Quality of Sleep'].mean().sort_values(ascending = False)
         print(variable_not_numerical)
 
-### BMI Category
+### _BMI Category_
 
     Normal           7.661538
     Normal Weight    7.428571
@@ -218,14 +218,14 @@ The non-numerical variables are: `BMI Category`, `Gender`, `Occupation`, `Blood 
 
 Individuals who are overweight tend to have lower sleep quality compared to those with a healthy weight.
 
-### Gender
+### _Gender_
 
     Female    7.664865
     Male      6.968254
 
 In general, women tend to have better sleep quality.
 
-### Occupation
+### _Occupation_
 
     Engineer                8.412698
     Lawyer                  7.893617
@@ -241,7 +241,7 @@ In general, women tend to have better sleep quality.
 
 In this study, the top 3 professions with the best sleep quality are: `Engineer`, `Lawyer` and `Accountant`.
 
-### Blood Pressure
+### _Blood Pressure_
     118/75    9.000000
     139/91    9.000000
     115/78    9.000000
@@ -270,13 +270,13 @@ In this study, the top 3 professions with the best sleep quality are: `Engineer`
 
 In general, individuals with lower systolic blood pressure values (around 125 or less) and lower diastolic blood pressure values (around 80 or less) tend to have better sleep quality.
 
-### Sleep Disorder
+### _Sleep Disorder_
     Sleep Apnea    7.205128
     Insomnia       6.532468
 
 Individuals who experience insomnia are more likely to have lower sleep quality compared to those with sleep apnea.
 
-### 6. Conclusion and Recommendations [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _6. Conclusion and Recommendations_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 Based on the analyses conducted, some recommendations can be made:
 
 - Avoid smoking and alcohol consumption, as well as being cautious with medication use, to manage heart rate and blood pressure.
