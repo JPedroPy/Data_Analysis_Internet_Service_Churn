@@ -145,13 +145,13 @@ A good metric to analyse correlations between columns is the `Pearson's Correlat
 
 ![Pearson_Correlation](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/10482bf4-a374-4332-9872-dfd84c98f0d3)
 
-As can be observed, that are `strong correlations` com `Quality of Sleep`: 
+As can be observed, that are `strong correlations` with `Quality of Sleep`: 
 
-- `-0.66` com `Heart Rate`
-- `-0.90` com `Stress Level`
-- `+0.88` com `Sleep Duration`
+- `-0.66` with `Heart Rate`
+- `-0.90` with `Stress Level`
+- `+0.88` with `Sleep Duration`
 
-It means, based in a statistical analysis, higher heart rate is, lower sleep quality is (inversely propor Isso significa que, enviesado em uma análise estatística, quanto mais alta for a frequência cardíaca, pior será a qualidade do sono (inversamente proporcionais), assim como quanto mais alto for o nível de estresse, haverá redução da qualidade do sono. Em contrapartida, quanto maior for a duração do sono, melhor ele será. 
+This means that, biased in a statistical analysis, the higher the heart rate, the worse the sleep quality (inversely proportional), just as the higher the stress level, the lower the sleep quality will be. On the other hand, the longer the duration of sleep, the better it will be.
 
 ### _Graphical analysis_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 We observed that there are three numerical variables that have a correlation with sleep quality. A graphical analysis of these variables reinforces the idea of Pearson correlation. For this, the `.density_heatmap` plot, by [plotly.express](https://plotly.com/python/), was utilized.
