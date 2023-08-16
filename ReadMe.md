@@ -2,7 +2,7 @@
 ## What is the best way to have a good night's sleep?
 
 ## _Stages of Analysis_
-[1. Define the problem](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#1-define-the-problem-%EF%B8%8F-return)
+[1. Define the Problem](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#1-define-the-problem-%EF%B8%8F-return)
 
 [2. Collect Data](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#2-collect-data-%EF%B8%8F-return)
 
@@ -14,7 +14,7 @@
 
 [6. Conclusion and Recommendations](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#6-conclusion-and-recommendations-%EF%B8%8F-return)
 
-### _1. Define the problem_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
+### _1. Define the Problem_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 In this dataset, we aim to analyze variables related to sleep and understand the reasons that make it less healthy, in order to make it better. The variables are:
 
 - Gender
