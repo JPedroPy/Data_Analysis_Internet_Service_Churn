@@ -157,6 +157,7 @@ This means that, biased in a statistical analysis, the higher the heart rate, th
 We observed that there are three numerical variables that have a correlation with sleep quality. A graphical analysis of these variables reinforces the idea of Pearson correlation. For this, the `.density_heatmap` plot, by [plotly.express](https://plotly.com/python/), was utilized.
 
 **_Quality of Sleep x Heart Rate_** 
+
         graphic = px.density_heatmap(sleep_df, x = 'Heart Rate', y = 'Quality of Sleep')
         graphic.show()
 ![Quality x Heart Rate](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/dd995fac-006c-4bd4-8d4f-9b4cbf01e118)
@@ -164,12 +165,14 @@ We observed that there are three numerical variables that have a correlation wit
 As expected, there is an indirect  relationship between the variables, where higher sleep quality values are associeted with the lower heart rate values, with the highest concentration for values below 75.
 
 **_Quality of Sleep x Stress Level_** 
+
         graphic = px.density_heatmap(sleep_df, x = 'Stress Level', y = 'Quality of Sleep')
         graphic.show()
 ![Quality x Stress](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/2c5339b3-5e94-4965-8769-184ba34cee0a)
 As expected, similarly with the previous graphic, as the stress level increases, There is a deterioration in sleep quality. So, they are inversely related.
 
 **_Quality of Sleep x Sleep Duration_** 
+
         graphic = px.density_heatmap(sleep_df, x = 'Sleep Duration', y = 'Quality of Sleep')
         graphic.show()
 ![Quality x Sleep Duration](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty/assets/141521444/9da68021-dc72-4fea-9ed4-e97f116fbe5f)
