@@ -32,7 +32,7 @@ In this dataset, we aim to analyze variables related to sleep and understand the
 
 
 ### _2. Collect Data_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
-The data was extracted from the file `sleep_healty.xlsx`, from `Kaggle`, availabre at: <https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset>.
+The data was extracted from the file `sleep_healthy.xlsx`, from `Kaggle`, availabre at: <https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset>.
 
 ### _3. Data Cleaning and Preprocessing_ [⬆️ Return](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#stages-of-analysis)
 Using the library [pandas](https://pandas.pydata.org/docs/) to import and interprete the data:
