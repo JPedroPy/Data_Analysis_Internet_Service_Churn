@@ -4,7 +4,7 @@
 ## _Stages of Analysis_
 [1. Define the Problem](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#1-define-the-problem-%EF%B8%8F-return)
 
-[2. Collect Data](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#2-collect-data-%EF%B8%8F-return)
+[2. Collect Data](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#2-collect-data-%EF%B8%8F-return) 
 
 [3. Data Cleaning and Preprocessing](https://github.com/JPedroPy/Data_Analysis_Sleep_Healty#3-data-cleaning-and-preprocessing-%EF%B8%8F-return)
 
